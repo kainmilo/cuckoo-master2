@@ -506,9 +506,9 @@ def api(ctx, host, port, uwsgi, nginx):
         print ("module = cuckoo.apps.api")
         print ("callable = app")
         print(("uid =", username))
-        print(("gid =", username))
+        print ("gid =", username)
         print ("env = CUCKOO_APP=api")
-        print(("env = CUCKOO_CWD=%s" % cwd()))
+        print("env = CUCKOO_CWD=%s" % cwd())
         return
 
     if nginx:
@@ -592,10 +592,10 @@ def web(ctx, args, host, port, uwsgi, nginx):
         if os.environ.get("VIRTUAL_ENV"):
             print(("virtualenv =", os.environ["VIRTUAL_ENV"]))
         print ("module = cuckoo.web.web.wsgi")
-        print(("uid =", username))
-        print(("gid =", username))
+        print("uid =", username)
+        print("gid =", username)
         dirpath = os.path.join(cuckoo.__path__[0], "web", "static")
-        print(("static-map = /static=%s" % dirpath))
+        print("static-map = /static=%s" % dirpath)
         print ("# If you're getting errors about the PYTHON_EGG_CACHE, then")
         print ("# uncomment the following line and add some path that is")
         print ("# writable from the defined user.")
@@ -610,7 +610,7 @@ def web(ctx, args, host, port, uwsgi, nginx):
         print ("}")
         print ()
         print ("server {")
-        print(("    listen %s:%d;" % (host, port)))
+        print("    listen %s:%d;" % (host, port))
         print ()
         print ("    # Cuckoo Web Interface")
         print ("    location / {")
