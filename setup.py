@@ -9,11 +9,7 @@ import setuptools
 import sys
 import traceback
 
-if sys.version[0] == "3":
-    sys.exit(
-        "Cuckoo is Python2-only at the moment! Please use Python 2 to "
-        "install it, i.e., `pip2 install -U cuckoo`."
-    )
+
 
 # Update the MANIFEST.in file to include the one monitor version that is
 # actively shipped for this distribution and exclude all the other monitors
